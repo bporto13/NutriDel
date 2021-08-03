@@ -1,16 +1,24 @@
-# ---- YOUR APP STARTS HERE ----
-# -- Import section --
 from flask import Flask
-# from flask import render_template
-# from flask import request
+from flask import render_template
+from flask import request
 
 
-# -- Initialization section --
 app = Flask(__name__)
 
 
-# -- Routes section --
 @app.route('/')
-@app.route('/index')
-def index():
-    return "hello world"
+@app.route('/home')
+def home():
+    return render_template("home.html")
+
+
+@app.route('/products')
+def products():
+
+
+    return render_template("products.html")
+
+
+@app.route('/total')
+def total():
+    return render_template("total.html")
